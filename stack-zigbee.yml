@@ -5,7 +5,7 @@ services:
         restart: unless-stopped
         volumes:
           - /home/abeksis/docker/zigbee2mqtt/data:/app/data
-          - /run/udev:/run/udev:ro
+          # - /run/udev:/run/udev:ro
         ports:
           # Frontend port
           - 8080:8080
