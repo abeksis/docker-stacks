@@ -11,6 +11,3 @@ services:
           - 8080:8080
         environment:
           - TZ=Asia/Jerusalem
-        # devices:
-        #   # Make sure this matched your adapter location
-        #   - /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2119426-if00:/dev/ttyACM0
