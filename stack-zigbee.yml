@@ -1,13 +1,16 @@
 services:
-    z2m_first_floor:
-        container_name: z2m_first_floor
+    zigbee2mqtt:
+        container_name: zigbee2mqtt
         image: koenkk/zigbee2mqtt
         restart: unless-stopped
         volumes:
-          - /volume1/docker/z2m_first_floor/data:/app/data
+          - /home/abeksis/docker/zigbee2mqtt/data:/app/data
           - /run/udev:/run/udev:ro
         ports:
           # Frontend port
-          - 58090:8080
+          - 8080:8080
         environment:
           - TZ=Asia/Jerusalem
+        # devices:
+        #   # Make sure this matched your adapter location
+        #   - /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2119426-if00:/dev/ttyACM0
