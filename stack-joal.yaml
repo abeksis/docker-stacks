@@ -5,12 +5,12 @@ services:
       container_name: joal
       restart: unless-stopped
       environment:
-        - joal.ui.path.prefix=abeksis
-        - joal.ui.secret-token=abeksis.net
+        - joal.ui.path.prefix=avi
+        - joal.ui.secret-token=avi.net
         - spring.main.web-environment=true
         - server.port=15538
       volumes:
         - /home/abeksis/docker/joal:/data
       ports:
         - 15538:15538
-      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=15538", "--joal.ui.path.prefix=abeksis", "--joal.ui.secret-token=abeksis.net"]
+      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=15538", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
