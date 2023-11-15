@@ -8,9 +8,9 @@ services:
         - joal.ui.path.prefix=avi
         - joal.ui.secret-token=avi.net
         - spring.main.web-environment=true
-        - server.port=5538
+        - server.port=15538
       volumes:
         - /home/abeksis/docker/joal/data:/data
       ports:
-        - 5538:5538
-      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=5538", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
+        - 15538:15538
+      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=15538", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
