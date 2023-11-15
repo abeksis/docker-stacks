@@ -10,4 +10,4 @@ services:
       - /home/abeksis/docker/homarr/icons:/app/public/icons
       - /home/abeksis/docker/homarr/data:/data
     ports:
-      - 7575:7575
+      - '7575:7575'
