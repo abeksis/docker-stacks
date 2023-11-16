@@ -6,7 +6,7 @@ services:
       restart: unless-stopped
       environment:
         - joal.ui.path.prefix=avi
-        - joal.ui.secret-token=avi.net
+        - joal.ui.secret-token=9UaHCkaT9sFXv
         - spring.main.web-environment=true
         - server.port=6687
       volumes:
