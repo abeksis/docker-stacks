@@ -5,7 +5,7 @@ services:
       container_name: joal
       restart: unless-stopped
       environment:
-        - joal.ui.path.prefix=avi
+        - joal.ui.path.prefix=joal
         - joal.ui.secret-token=9UaHCkaT9sFXv
         - spring.main.web-environment=true
         - server.port=6687
