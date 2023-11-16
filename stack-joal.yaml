@@ -13,4 +13,4 @@ services:
         - /home/abeksis/docker/joal/data:/data
       ports:
         - 6687:6687
-      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=6687", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
+      #command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=6687", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
