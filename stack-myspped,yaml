@@ -15,7 +15,7 @@ services:
     # to the container's directory '/myspeed/data'.
     # This allows for data persistence and sharing between the host and container.
     volumes:
-      - /home/abeksis/docker/myspeed_data:/myspeed/data
+      - myspeed_data:/myspeed/data
 
     # The 'restart' policy is set to 'unless-stopped', meaning the service will automatically restart
     # unless it has been explicitly stopped by the user.
