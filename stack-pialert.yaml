@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  pialert:
+    container_name: pialert
+    image: "jokobsk/pi.alert:latest"
+    network_mode: "host"
+    restart: unless-stopped
+    volumes:
+      - /home/abeksis/docker/pialert/config:/home/pi/pialert/config
+      - /home/abeksis/docker/pialert/db:/home/pi/pialert/db
+      - /home/abeksis/docker/pialert/logs:/home/pi/pialert/front/log
+    environment:
+      - TZ=Asia/Jerusalem
+      - HOST_USER_ID=1000
+      - HOST_USER_GID=1000
+      - PORT=20211
