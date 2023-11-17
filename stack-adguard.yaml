@@ -9,7 +9,7 @@ services:
       macvlan_NET:
         ipv4_address: 192.168.1.202
     volumes:
-      - //home/abeksis/docker/adguard/work:/opt/adguardhome/work
+      - /home/abeksis/docker/adguard/work:/opt/adguardhome/work
       - /home/abeksis/docker/adguard/conf:/opt/adguardhome/conf
     restart: unless-stopped
 
