@@ -14,10 +14,9 @@ services:
       - 32414:32414/udp
     environment:
       - TZ=Asia/Jerusalem
-      - PLEX_CLAIM=<claimToken>
-      - ADVERTISE_IP=http://<hostIPAddress>:32400/
-    hostname: <hostname>
+      - PLEX_CLAIM=JTnT8irdhXPvzUEGxL71
+      - ADVERTISE_IP=http://192.168.1.90:32400/
     volumes:
       - /home/abeksis/docker/plex:/config
-      - <path/to/transcode/temp>:/transcode
-      - <path/to/media>:/data
+      - /home/abeksis/docker/plex:/transcode
+      - /mnt/user/data/media/:/data
