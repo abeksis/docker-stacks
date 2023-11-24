@@ -7,7 +7,7 @@ services:
       - PGID=1000
       - TZ=Asia/Jerusalem
     volumes:
-      - /home/abeksis/docker:/config
+      - /home/abeksis/docker/sonarr:/config
       - /mnt/user/data/media/tv:/tv
       - /mnt/data/torrentss:/torrentss
     ports:
