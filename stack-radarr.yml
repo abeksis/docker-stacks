@@ -1,0 +1,15 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Jerusalem
+    volumes:
+      - /home/abeksis/docker:/config
+      - /mnt/user/data/media/movies:/movies
+      - /mnt/data/torrents:/torrents
+    ports:
+      - 7878:7878
+    restart: unless-stopped
