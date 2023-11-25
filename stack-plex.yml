@@ -18,5 +18,5 @@ services:
       - ADVERTISE_IP=http://192.168.1.90:32400/
     volumes:
       - /home/abeksis/docker/plex:/config
-      - /home/abeksis/docker/plex:/transcode
-      - /home/abeksis/data/media/:/data
+      - /home/abeksis/docker/plex/transcode:/transcode
+      - /home/abeksis/data/media/:/data/media
