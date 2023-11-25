@@ -16,7 +16,7 @@ services:
       - TZ=Asia/Jerusalem
       - ADVERTISE_IP=http://192.168.1.90:32400/
       - HOSTNAME=PlexServer
-      - PLEX_CLAIM=claim-jHqVctcqaW3WUG3SRvJH
+      - PLEX_CLAIM=XXXXXXX
     volumes:
       - /home/abeksis/docker/plex:/config
       - /home/abeksis/docker/plex/transcode:/transcode
