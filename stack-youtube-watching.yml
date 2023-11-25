@@ -5,7 +5,7 @@ services:
     volumes:
       - //youtube-watching/config/
     environment:
-      - COOKIE=/home/abeksis/docker/youtube-watching/config/youtube.com_cookies.txt
+      - COOKIE=./config/youtube.com_cookies.txt
     network_mode: bridge
     ports:
       - 5678:5678
