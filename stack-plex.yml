@@ -14,9 +14,9 @@ services:
       - 32414:32414/udp
     environment:
       - TZ=Asia/Jerusalem
-      - PLEX_CLAIM=JTnT8irdhXPvzUEGxL71
       - ADVERTISE_IP=http://192.168.1.90:32400/
-      - HOSTNAME=”PlexServer”
+      - HOSTNAME=PlexServer
+      - PLEX_CLAIM=claim-jHqVctcqaW3WUG3SRvJH
     volumes:
       - /home/abeksis/docker/plex:/config
       - /home/abeksis/docker/plex/transcode:/transcode
