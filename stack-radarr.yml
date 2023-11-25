@@ -8,8 +8,8 @@ services:
       - TZ=Asia/Jerusalem
     volumes:
       - /home/abeksis/docker/radarr:/config
-      - /mnt/user/data/media/movies:/movies
-      - /mnt/data/torrents:/torrents
+      - /home/abeksis/data/media/movies:/movies
+      - /home/abeksis/data/torrents:/torrents
     ports:
       - 7878:7878
     restart: unless-stopped
