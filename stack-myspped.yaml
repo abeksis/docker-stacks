@@ -5,7 +5,7 @@ services:
     ports:
       - "5216:5216"
     volumes:
-      - myspeed_data:/myspeed/data
+      - /home/abeksis/docker/myspeed:/data
     restart: unless-stopped
 volumes:
   myspeed_data:
