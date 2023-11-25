@@ -1,0 +1,12 @@
+services:
+  youtube-watching:
+    container_name: youtube-watching
+    image: ghcr.io/matt8707/youtube-watching
+    volumes:
+      - //youtube-watching/config/
+    environment:
+      - COOKIE=/home/abeksis/docker/youtube-watching/config/youtube.com_cookies.txt
+    network_mode: bridge
+    ports:
+      - 5678:5678
+    restart: always
