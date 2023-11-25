@@ -19,4 +19,4 @@ services:
     volumes:
       - /home/abeksis/docker/plex:/config
       - /home/abeksis/docker/plex:/transcode
-      - /mnt/user/data/media/:/data
+      - /home/abeksis/data/media/:/data

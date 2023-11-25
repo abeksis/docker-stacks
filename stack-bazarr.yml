@@ -8,8 +8,8 @@ services:
       - TZ=Asia/Jerusalem
     volumes:
       - /home/abeksis/docker/bazarr:/config
-      - /mnt/user/data/media/movies:/movies
-      - /mnt/user/data/media/tv:/tv
+      - /home/abeksis/data/media/movies:/movies
+      - /home/abeksis/data/media/tv:/tv
     ports:
       - 6767:6767
     restart: unless-stopped

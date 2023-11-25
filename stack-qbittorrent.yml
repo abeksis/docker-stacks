@@ -9,7 +9,7 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - /home/abeksis/docker/qbittorrent:/config
-      - /mnt/data/torrents:/torrents
+      - /home/abeksis/data/torrents:/torrents
     ports:
       - 8080:8080
       - 26881:6881
