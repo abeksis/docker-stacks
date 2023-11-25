@@ -9,7 +9,7 @@ services:
     volumes:
       - /home/abeksis/docker/sonarr:/config
       - /home/abeksis/data/media/tv:/tv
-      - /home/abeksis/data/torrents:/torrents
+      - /home/abeksis/data/torrents:/data/torrents
     ports:
       - 8989:8989
     restart: unless-stopped
