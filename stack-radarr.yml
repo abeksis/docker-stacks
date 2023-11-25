@@ -9,7 +9,7 @@ services:
     volumes:
       - /home/abeksis/docker/radarr:/config
       - /home/abeksis/data/media/movies:/movies
-      - /home/abeksis/data/torrents:/torrents
+      - /home/abeksis/data/torrents:/data/torrents
     ports:
       - 7878:7878
     restart: unless-stopped
