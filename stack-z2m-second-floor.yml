@@ -1,0 +1,13 @@
+services:
+  z2m_second_floor:
+    container_name: z2m_second_floor
+    image: koenkk/zigbee2mqtt
+    restart: unless-stopped
+    volumes:
+      - /home/abeksis/appdata/z2m_second_floor:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      # Frontend port
+      - 58080:8080
+    environment:
+      - TZ=Asia/Jerusalem
