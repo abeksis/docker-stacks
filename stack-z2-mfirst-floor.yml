@@ -1,0 +1,13 @@
+services:
+  z2m_first_floor:
+    container_name: z2m_first_floor
+    image: koenkk/zigbee2mqtt
+    restart: unless-stopped
+    volumes:
+      - /home/abeksis/docker/z2m_first_floor:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      # Frontend port
+      - 58090:8080
+    environment:
+      - TZ=Asia/Jerusalem
