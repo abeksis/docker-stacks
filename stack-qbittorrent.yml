@@ -10,6 +10,7 @@ services:
     volumes:
       - /home/abeksis/docker:/config
       - /home/abeksis/data/torrents:/data/torrents
+    network_mode: bridge  
     ports:
       - 8080:8080
       - 26881:6881
