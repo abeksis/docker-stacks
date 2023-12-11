@@ -9,5 +9,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Jerusalem
+    network_mode: bridge  
     ports:
       - 8181:8181

@@ -10,7 +10,7 @@ services:
       - /home/abeksis/docker/sonarr:/config
       - /home/abeksis/data/media/tv:/tv
       - /home/abeksis/data/torrents:/data/torrents
-    network_mode: bridge  
+    network_mode: bridge
     ports:
       - 8989:8989
     restart: unless-stopped
