@@ -9,5 +9,6 @@ services:
       - /home/abeksis/docker/homarr/configs:/app/data/configs
       - /home/abeksis/docker/homarr/icons:/app/public/icons
       - /home/abeksis/docker/homarr/data:/data
+    network_mode: bridge   
     ports:
       - '7575:7575'
