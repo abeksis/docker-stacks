@@ -2,6 +2,7 @@ version: "3"
 services:
   myspeed:
     image: germannewsmaker/myspeed
+    network_mode: bridge
     ports:
       - "5216:5216"
     volumes:

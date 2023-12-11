@@ -11,6 +11,7 @@ services:
       #   - server.port=6687
       volumes:
         - /home/abeksis/docker/joal:/data
+      network_mode: bridge  
       ports:
         - 6687:6687
       command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=6687", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
