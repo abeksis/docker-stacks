@@ -10,6 +10,7 @@ services:
       - /home/abeksis/docker/radarr:/config
       - /home/abeksis/data/media/movies:/movies
       - /home/abeksis/data/torrents:/data/torrents
+    network_mode: bridge  
     ports:
       - 7878:7878
     restart: unless-stopped
