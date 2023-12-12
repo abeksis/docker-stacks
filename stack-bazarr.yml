@@ -10,7 +10,7 @@ services:
       - /home/abeksis/docker/bazarr:/config
       - /home/abeksis/data/media/movies:/movies
       - /home/abeksis/data/media/tv:/tv
-    network_mode: bridge  
+    network_mode: proxy  
     ports:
       - 6767:6767
     restart: unless-stopped
