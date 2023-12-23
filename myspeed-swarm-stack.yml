@@ -13,18 +13,15 @@ services:
       placement:
         constraints: [node.platform.os == linux]
 
-
   myspeed:
     image: germannewsmaker/myspeed
-    command: -H tcp://tasks.agent:9001 --tlsskipverify
     ports:
       - "5216:5216"
     volumes:
-      - type: bind
-        source: /mnt/myspeed
-        target: /data
+      - /home/ubuntu/docker/myspeed:/data
     networks:
       - agent_network
+    restart: unless-stopped  
     deploy:
       mode: replicated
       replicas: 1
