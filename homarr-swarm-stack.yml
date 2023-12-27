@@ -17,15 +17,11 @@ services:
     image: ghcr.io/ajnart/homarr:latest
     ports:
       - '7575:7575'
+     
     volumes:
-      - type: bind
-        source: /mnt/homarr
-        target: /data
-    # volumes:
-    #   - /var/run/docker.sock:/var/run/docker.sock
-    #   - /home/ubuntu/docker/homarr/configs:/app/data/configs
-    #   - /home/ubuntu/docker/homarr/icons:/app/public/icons
-    #   - /home/ubuntu/docker/homarr/data:/data
+      - /mnt/homarr/configs:/app/data/configs
+      - /mnt/homarr/icons:/app/public/icons
+      - /mnt/homarr/data:/data
     networks:
       - agent_network 
     restart: unless-stopped  
