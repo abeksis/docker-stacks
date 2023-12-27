@@ -11,8 +11,8 @@ services:
       - PORT_RANGE=30000:30010 #optional
       - SUBFOLDER=/ #optional
     volumes:
-      - /home/abeksis/docker/config:/config
-      - /home/abeksis/docker/assets:/assets #optional
+      - /home/abeksis/docker/netboot_xyz/config:/config
+      - /home/abeksis/docker/netboot_xyz/assets:/assets #optional
     ports:
       - 3000:3000
       - 69:69/udp
