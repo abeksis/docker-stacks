@@ -1,12 +1,19 @@
+version: "3.8"
 
-version: "2"
 services:
+
   joal:
-    image: anthonyraymond/joal:2.1.36
+    image: docker.io/anthonyraymond/joal:latest
     container_name: joal
+    hostname: joal
     restart: unless-stopped
+    environment:
+      - joal-conf=/data
+      - spring.main.web-environment=true
+      - server.port=20026
+      - joal.ui.path.prefix=avi
+      - joal.ui.secret-token=asdasd636a
     volumes:
       - /home/abeksis/docker/joal:/data
     ports:
-      - PORT:PORT
-    command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=PORT", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
+      - 20026:20026/tcp    
