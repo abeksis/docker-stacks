@@ -1,51 +1,12 @@
-version: '3.8'
+
+version: "2"
 services:
-    joal:
-      image: anthonyraymond/joal
-      container_name: joal
-      restart: unless-stopped
-      # environment:
-      #   - joal.ui.path.prefix=joal
-      #   - joal.ui.secret-token=9UaHCkaT9sFXv
-      #   - spring.main.web-environment=true
-      #   - server.port=6687
-      volumes:
-        - /home/abeksis/docker/joal:/data
-      network_mode: bridge  
-      ports:
-        - 6687:6687
-      command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=6687", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
-
-
-# version: "2"
-# services:
-#   joal:
-#     image: anthonyraymond/joal:X.X.X
-#     container_name: joal
-#     restart: unless-stopped
-#     volumes:
-#       - PATH_TO_CONF:/data
-#     ports:
-#       - PORT:PORT
-#     command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=PORT", "--joal.ui.path.prefix=SECRET_OBFUSCATION_PATH", "--joal.ui.secret-token=SECRET_TOKEN"]
-
-
-# version: "3.8"
-
-# services:
-
-#   joal:
-#     image: docker.io/anthonyraymond/joal:latest
-#     container_name: joal
-#     hostname: joal
-#     restart: unless-stopped
-#     environment:
-#       - joal-conf=/data
-#       - spring.main.web-environment=true
-#       - server.port=20026
-#       - joal.ui.path.prefix=joal
-#       - joal.ui.secret-token=<9UaHCkaT9sFXv
-#     volumes:
-#       - /home/abeksis/docker/joal:/data
-#     ports:
-#       - 20026:20026/tcp      
+  joal:
+    image: anthonyraymond/joal:2.1.36
+    container_name: joal
+    restart: unless-stopped
+    volumes:
+      - /home/abeksis/docker/joal:/data
+    ports:
+      - PORT:PORT
+    command: ["--joal-conf=/data", "--spring.main.web-environment=true", "--server.port=PORT", "--joal.ui.path.prefix=avi", "--joal.ui.secret-token=avi.net"]
