@@ -10,7 +10,23 @@ services:
       - /home/abeksis/docker/sonarr:/config
       - /home/abeksis/data/media/tv:/tv
       - /home/abeksis/data/torrents:/data/torrents
-    network_mode: bridge
-    ports:
-      - 8989:8989
+    networks:
+      proxy:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sonarr.entrypoints=web"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.local.abeksis.work`)"
+      - "traefik.http.middlewares.sonarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.sonarr.middlewares=sonarr-https-redirect"
+      - "traefik.http.routers.sonarr-secure.entrypoints=websecure"
+      - "traefik.http.routers.sonarr-secure.rule=Host(`sonarr.local.abeksis.work`)"
+      - "traefik.http.routers.sonarr-secure.tls=true"
+      - "traefik.http.routers.sonarr-secure.tls.certresolver=mydnschallenge"
+      - "traefik.http.routers.sonarr-secure.service=sonarr"
+      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+      - "traefik.docker.network=proxy"
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
