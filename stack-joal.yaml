@@ -6,7 +6,6 @@ services:
     image: docker.io/anthonyraymond/joal:latest
     container_name: joal
     hostname: joal
-    restart: unless-stopped
     environment:
       - joal-conf=/data
       - spring.main.web-environment=true
@@ -15,5 +14,24 @@ services:
       - joal.ui.secret-token=asdasd636a
     volumes:
       - /home/abeksis/docker/joal:/data
-    ports:
-      - 20026:20026/tcp    
+
+    networks:
+      proxy:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.joal.entrypoints=web"
+      - "traefik.http.routers.joal.rule=Host(`joal.local.abeksis.work`)"
+      - "traefik.http.middlewares.joal-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.joal.middlewares=joal-https-redirect"
+      - "traefik.http.routers.joal-secure.entrypoints=websecure"
+      - "traefik.http.routers.joal-secure.rule=Host(`joal.local.abeksis.work`)"
+      - "traefik.http.routers.joal-secure.tls=true"
+      - "traefik.http.routers.joal-secure.tls.certresolver=mydnschallenge"
+      - "traefik.http.routers.joal-secure.service=joal"
+      - "traefik.http.services.joal.loadbalancer.server.port=20026"
+      - "traefik.docker.network=proxy"
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
