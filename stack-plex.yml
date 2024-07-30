@@ -23,4 +23,4 @@ services:
       - /home/abeksis/docker/plex:/config
       - /home/abeksis/docker/plex/transcode:/transcode
       - /home/abeksis/data/media:/data/media
-      - /home/abeksis/data/media/private:/private
+      - /home/abeksis/data/private:/private
